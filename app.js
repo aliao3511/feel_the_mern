@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 const db = require("./config/keys").mongoURI;
+const passport = require('passport');
 
 mongoose
     .connect(db, { useNewUrlParser: true })
@@ -14,10 +15,15 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// routes
-app.get("/", (req, res) => res.send("we out here"));
+// MIDDLEWARE
+app.use(passport.initialize());
+require('./config/passport.js')(passport);
+
+// ROUTES
+// app.get("/", (req, res) => res.send("we out here"));
 app.use('/api/users', users);
 app.use('/api/tweets', tweets);
+
 
 const port = process.env.PORT || 5000;
 
