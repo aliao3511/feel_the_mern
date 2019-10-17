@@ -33,7 +33,7 @@ module.exports = function validateRegisterInput(data) {
         errors.password = 'password must be between 6 and 30 characters';
     }
 
-    if (!Validator.isEmpty(data.password2)) {
+    if (Validator.isEmpty(data.password2)) {
         errors.password2 = 'password field required';
     }
 
@@ -43,6 +43,6 @@ module.exports = function validateRegisterInput(data) {
 
     return {
         errors,
-        isValid: Object.keys.length === 0,
+        isValid: Object.keys(errors).length === 0,
     };
 };
