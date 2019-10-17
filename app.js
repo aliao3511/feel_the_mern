@@ -20,7 +20,7 @@ app.use(passport.initialize());
 require('./config/passport.js')(passport);
 
 // ROUTES
-// app.get("/", (req, res) => res.send("we out here"));
+app.get("/", (req, res) => res.send("we out here"));
 app.use('/api/users', users);
 app.use('/api/tweets', tweets);
 
