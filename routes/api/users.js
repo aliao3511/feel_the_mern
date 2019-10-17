@@ -96,7 +96,7 @@ router.post('/login', (req, res) => {
         });
 });
 
-// private auth route
+// get current user *PROTECTED*
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     // res.json({ msg: 'success' });
     res.json({
