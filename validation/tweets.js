@@ -10,7 +10,7 @@ module.exports = function validateTweetInput(data) {
         errors.body = 'tweet must be between 5 and 140 characters';
     }
 
-    if (Validator.isEmpty) {
+    if (Validator.isEmpty(data.body)) {
         errors.body = 'tweet cannot be blank';
     }
 
