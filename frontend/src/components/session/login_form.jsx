@@ -13,11 +13,20 @@ class LoginForm extends React.Component {
 
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.currentUser === true) {
+    //         this.props.history.push('/tweets');
+    //     }
+    //     this.setState({ errors: nextProps.errors });
+    // }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.currentUser) {
             this.props.history.push('/tweets');
         }
-        this.setState({ errors: nextProps.errors });
+        if (prevProps.errors != this.props.errors) {
+            this.setState({ errors: this.props.errors });
+        }  
     }
 
     update(field) {
