@@ -10,7 +10,7 @@ export default class NavBar extends React.Component {
 
     logoutUser(e) {
         e.preventDefault();
-        this.props.logout();
+        this.props.logout().then(() => this.props.history.push('/login'));
     }
 
     getLinks() {
@@ -18,7 +18,7 @@ export default class NavBar extends React.Component {
             return (
                 <div>
                     <Link to='/tweets'>all tweets</Link>
-                    {/* <Link to='/profile'>profie</Link> */}
+                    {/* <Link to='/profile'>profile</Link> */}
                     <Link to='/new_tweet'>tweet tweet</Link>
                     <button onClick={this.logoutUser}>log out</button>
                 </div>

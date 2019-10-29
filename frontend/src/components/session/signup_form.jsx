@@ -15,6 +15,10 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearSessionErrors();
+    }
+
     componentDidUpdate() {
         if (this.props.signedIn) {
             // this.props.history.push('/tweets');
