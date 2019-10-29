@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 // must not be logged in
 const Auth = ({ component: Component, loggedIn, ...rest }) => (
@@ -14,14 +14,14 @@ const Auth = ({ component: Component, loggedIn, ...rest }) => (
 );
 
 // must be logged in
-const Protected = ({ component: Component, loggedIn, exact }) => (
+const Protected = ({ component: Component, loggedIn, exact, ...rest }) => (
     <Route {...rest} render={(props) => (
         loggedIn ? (
             <Component {...props} />
         ) : (
             <Redirect to='/login' />
         )
-    )}/>
+    )} />
 );
 
 const mapStateToProps = state => (

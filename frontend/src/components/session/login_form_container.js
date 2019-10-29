@@ -9,10 +9,10 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        login: user => dispatch(login(user))
-    };
-};
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         login: user => dispatch(login(user))
+//     };
+// };
 
-export default connect(mapStateToProps, mapDispatchtoProps)(LoginForm);
+export default connect(mapStateToProps, { login })(LoginForm);

@@ -26,11 +26,19 @@ export default class NavBar extends React.Component {
         } else {
             return (
                 <div>
-                    <Link to='/sign up'>sign up</Link>
-                    <Link to='/log in'>log in</Link>
+                    <Link to='/signup'>sign up</Link>
+                    <Link to='/login'>log in</Link>
                 </div>
             );
         }
+    }
+
+    render() {
+        return (
+            <>
+                {this.getLinks()}
+            </>
+        );
     }
 
 }
