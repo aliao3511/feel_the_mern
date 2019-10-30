@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-export default class NavBar extends React.Component {
+class NavBar extends React.Component {
 
     constructor(props) {
         super(props);
@@ -10,7 +10,9 @@ export default class NavBar extends React.Component {
 
     logoutUser(e) {
         e.preventDefault();
-        this.props.logout().then(() => this.props.history.push('/login'));
+        // this.props.logout().then(() => this.props.history.push('/login'));
+        this.props.logout();
+        this.props.history.push('/login');
     }
 
     getLinks() {
@@ -42,3 +44,5 @@ export default class NavBar extends React.Component {
     }
 
 }
+
+export default withRouter(NavBar);

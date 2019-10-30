@@ -11,6 +11,10 @@ import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+// TESTING
+// import { fetchTweets } from './actions/tweet_actions';
+// TESTING
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
     
@@ -30,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore({});
     }
+
+    // TESTING
+    // window.store = store;
+    // window.fetchTweets = fetchTweets;
+    // TESTING
+
         const root = document.getElementById('root');
         ReactDOM.render(<Root store={store} />, root)
 });

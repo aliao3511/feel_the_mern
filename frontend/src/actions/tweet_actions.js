@@ -3,6 +3,7 @@ import * as TweetApiUtil from '../util/tweet_api_util';
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS';
 export const RECEIVE_TWEET = 'RECEIVE_TWEET';
 export const RECEIVE_NEW_TWEET = 'RECEIVE_NEW_TWEET';
+export const RECEIVE_USER_TWEETS = 'RECEIVE_USER_TWEETS';
 
 // action creators
 export const receiveTweets = tweets => ({
@@ -18,6 +19,11 @@ export const receiveTweet = tweet => ({
 export const receiveNewTweet = tweet => ({
     type: RECEIVE_NEW_TWEET,
     tweet
+});
+
+export const receiveUserTweets = tweets => ({
+    type: RECEIVE_USER_TWEETS,
+    tweets
 });
 
 // thunk action creators
