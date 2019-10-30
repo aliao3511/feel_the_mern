@@ -28,21 +28,21 @@ export const receiveUserTweets = tweets => ({
 
 // thunk action creators
 export const fetchTweets = () => dispatch => {
-    TweetApiUtil.getTweets()
+    return TweetApiUtil.getTweets()
         .then(tweets => dispatch(receiveTweets(tweets)));
 };
 
 export const fetchTweet = id => dispatch => {
-    TweetApiUtil.getTweet(id)
+    return TweetApiUtil.getTweet(id)
         .then(tweet => dispatch(receiveTweet(id)));
 };
 
 export const fetchUserTweets = id => dispatch => {
-    TweetApiUtil.getUserTweets(id)
+    return TweetApiUtil.getUserTweets(id)
         .then(tweets => dispatch(receiveUserTweets(tweets)));
 };
 
 export const createTweet = tweet => dispatch => {
-    TweetApiUtil.createTweet(tweet)
+    return TweetApiUtil.createTweet(tweet)
         .then(tweet => dispatch(receiveNewTweet(tweet)));
 };
