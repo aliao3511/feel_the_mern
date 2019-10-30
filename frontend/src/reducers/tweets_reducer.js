@@ -5,7 +5,10 @@ const tweetsReducer = (state = { all: {}, user: {}, new: undefined }, action) =>
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_TWEETS:
-            newState.all = action.tweets.data;
+            newState.all = action.tweets.data.reduce((acc, tweet) => {
+                acc[tweet.id] = tweet;
+                return acc;
+            }, {});
             return newState;
         case RECEIVE_USER_TWEETS:
             newState.user = action.tweets.data;

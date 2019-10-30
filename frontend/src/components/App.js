@@ -6,7 +6,7 @@ import MainPage from './main/mainpage.js';
 import NavBarContainer from '../components/nav/navbar_container';
 import LoginFormContainer from '../components/session/login_form_container';
 import SignupFormContainer from '../components/session/signup_form_container';
-import TweetsIndex from '../components/tweets/tweets_index';
+import TweetsIndex from '../components/tweets/tweets_index_container';
 
 const App = () => (
   <div>
