@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { fetchTweets } from '../../actions/tweet_actions'
 
 const mapStateToProps = state => {
     return {
-        tweets: state.tweets.all,
+        tweets: Object.values(state.tweets.all),
     };
 };
 
@@ -20,7 +21,7 @@ class TweetsIndex extends React.Component {
         } else {
             return (
                 <ul>
-                    {Object.values(this.props.tweets).map(tweet => <li key={tweet._id}>{tweet.body}</li>)}
+                    {this.props.tweets.map(tweet => <li key={tweet._id}>{tweet.body}</li>)}
                 </ul>
             );
         }

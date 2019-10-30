@@ -39,7 +39,7 @@ export const fetchTweet = id => dispatch => {
 
 export const fetchUserTweets = id => dispatch => {
     TweetApiUtil.getUserTweets(id)
-        .then(tweets => dispatch(receiveTweets(tweets)));
+        .then(tweets => dispatch(receiveUserTweets(tweets)));
 };
 
 export const createTweet = tweet => dispatch => {

@@ -20,7 +20,7 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <Link to='/tweets'>all tweets</Link>
-                    {/* <Link to='/profile'>profile</Link> */}
+                    <Link to='/profile'>profile</Link>
                     <Link to='/new_tweet'>tweet tweet</Link>
                     <button onClick={this.logoutUser}>log out</button>
                 </div>

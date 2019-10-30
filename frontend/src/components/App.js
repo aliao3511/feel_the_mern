@@ -7,6 +7,7 @@ import NavBarContainer from '../components/nav/navbar_container';
 import LoginFormContainer from '../components/session/login_form_container';
 import SignupFormContainer from '../components/session/signup_form_container';
 import TweetsIndex from '../components/tweets/tweets_index_container';
+import ProfileContainer from '../components/profile/profile_container';
 
 const App = () => (
   <div>
@@ -16,6 +17,7 @@ const App = () => (
       <AuthRoute exact path='/login' component={LoginFormContainer}/>
       <AuthRoute exact path='/signup' component={SignupFormContainer}/>
       <ProtectedRoute exact path='/tweets' component={TweetsIndex} />
+      <ProtectedRoute exact path='/profile' component={ProfileContainer} />
     </Switch>
   </div>
 )

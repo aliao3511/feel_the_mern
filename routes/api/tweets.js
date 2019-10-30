@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 // get a single user's tweets
 router.get('/user/:userId', (req, res) => {
     Tweet.find({ user: req.params.userId })
-        .sort('date', -1)
+        .sort({'date': -1})
         .then(tweets => res.json(tweets))
         .catch(err => res.status(404).json({ message: 'no tweets found :-(' }));
 });
